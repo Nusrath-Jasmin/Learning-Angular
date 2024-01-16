@@ -14,6 +14,7 @@ import { ObservableComponent } from './rxjs/observable/observable.component';
 import { OperatorsComponent } from './rxjs/operators/operators.component';
 import { Operators2Component } from './rxjs/operators2/operators2.component';
 import { HttpClientModule } from '@angular/common/http';
+// import { CustomService } from './services/custom.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     SharedModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
-  providers: [],
+  providers: [
+    // CustomService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
