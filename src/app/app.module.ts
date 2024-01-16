@@ -12,6 +12,8 @@ import { ChildComponent } from './communication/child/child.component';
 import { FormsModule } from '@angular/forms';
 import { ObservableComponent } from './rxjs/observable/observable.component';
 import { OperatorsComponent } from './rxjs/operators/operators.component';
+import { Operators2Component } from './rxjs/operators2/operators2.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { OperatorsComponent } from './rxjs/operators/operators.component';
     ChildComponent,
     ObservableComponent,
     OperatorsComponent,
+    Operators2Component,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
