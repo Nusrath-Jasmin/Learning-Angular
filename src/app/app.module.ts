@@ -10,6 +10,8 @@ import { SharedModule } from './modules/shared-modules/shareedModule.module';
 import { ParetComponent } from './communication/paret/paret.component';
 import { ChildComponent } from './communication/child/child.component';
 import { FormsModule } from '@angular/forms';
+import { ObservableComponent } from './rxjs/observable/observable.component';
+import { OperatorsComponent } from './rxjs/operators/operators.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FormsModule } from '@angular/forms';
     BetterHighLightDirective,
     ParetComponent,
     ChildComponent,
+    ObservableComponent,
+    OperatorsComponent,
   ],
   imports: [
     BrowserModule,

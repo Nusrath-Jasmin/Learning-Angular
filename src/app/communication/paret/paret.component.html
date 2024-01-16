@@ -1,0 +1,4 @@
+<p>paret works!</p>
+<app-child [x]="y"  (messageEvent)="receiveMessage($event)"></app-child>
+{{receivedMessage}}
+<button (click)="callChildMethod()">Call Child Method</button>
