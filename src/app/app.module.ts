@@ -14,6 +14,8 @@ import { ObservableComponent } from './rxjs/observable/observable.component';
 import { OperatorsComponent } from './rxjs/operators/operators.component';
 import { Operators2Component } from './rxjs/operators2/operators2.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RoutingComponent } from './routing/routing/routing.component';
+import { MyRoutingModeule } from './my-routing.module';
 // import { CustomService } from './services/custom.service';
 
 @NgModule({
@@ -27,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     ObservableComponent,
     OperatorsComponent,
     Operators2Component,
+    RoutingComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     FormsModule,
     HttpClientModule,
-    
+    MyRoutingModeule
   ],
   providers: [
     // CustomService
