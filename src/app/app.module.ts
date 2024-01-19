@@ -9,13 +9,15 @@ import { BetterHighLightDirective } from './Directives/better-high-light.directi
 import { SharedModule } from './modules/shared-modules/shareedModule.module';
 import { ParetComponent } from './communication/paret/paret.component';
 import { ChildComponent } from './communication/child/child.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ObservableComponent } from './rxjs/observable/observable.component';
 import { OperatorsComponent } from './rxjs/operators/operators.component';
 import { Operators2Component } from './rxjs/operators2/operators2.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingComponent } from './routing/routing/routing.component';
 import { MyRoutingModeule } from './my-routing.module';
+import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
+import { ReactiveComponent } from './forms/reactive/reactive.component';
 // import { CustomService } from './services/custom.service';
 
 @NgModule({
@@ -30,6 +32,8 @@ import { MyRoutingModeule } from './my-routing.module';
     OperatorsComponent,
     Operators2Component,
     RoutingComponent,
+    TemplateDrivenComponent,
+    ReactiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { MyRoutingModeule } from './my-routing.module';
     SharedModule,
     FormsModule,
     HttpClientModule,
-    MyRoutingModeule
+    MyRoutingModeule,
+    ReactiveFormsModule
   ],
   providers: [
     // CustomService
