@@ -13,11 +13,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ObservableComponent } from './rxjs/observable/observable.component';
 import { OperatorsComponent } from './rxjs/operators/operators.component';
 import { Operators2Component } from './rxjs/operators2/operators2.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RoutingComponent } from './routing/routing/routing.component';
 import { MyRoutingModeule } from './my-routing.module';
 import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
 import { ReactiveComponent } from './forms/reactive/reactive.component';
+import { FormComponent } from './http/form/form.component';
+import { InterceptorService } from './services/interceptor.service';
 // import { CustomService } from './services/custom.service';
 
 @NgModule({
@@ -34,6 +36,7 @@ import { ReactiveComponent } from './forms/reactive/reactive.component';
     RoutingComponent,
     TemplateDrivenComponent,
     ReactiveComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,10 @@ import { ReactiveComponent } from './forms/reactive/reactive.component';
   ],
   providers: [
     // CustomService
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:InterceptorService,
+      multi:true}
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,51 @@
+<div class="task-card" *ngFor="let task of allData">
+    <div class="task-property">Title:{{task.title}}</div>
+
+    <div class="task-property">Description:{{task.desc}}</div>
+
+    <div class="task-property">Assigned To:{{task.assignedto}}</div>
+
+    <div class="task-property">Created At:{{task.createdAt}}</div>
+   
+    <div class="task-property">Priority:{{task.priority}}</div>
+
+    <div class="task-status status-completed">status:{{task.ststus}}</div>
+    <button (click)="OnDelete(task.id)">Delete Task</button>
+    <button (click)="update(task.id)">Edit Task</button>
+
+  </div>
+
+
+
+
+
+<h3>Add new task</h3>
+<form #form="ngForm" (ngSubmit)="OnFormSubmitted(form)" >
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required ngModel>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" required ngModel></textarea>
+
+    <label for="assignedTo">Assigned To:</label>
+    <input type="text" id="assignedTo" name="assignedTo" required ngModel>
+
+    <label for="createdAt">Created At (Date):</label>
+    <input type="date" id="createdAt" name="createdAt" required ngModel>
+
+    <label for="priority">Priority:</label>
+    <select id="priority" name="priority" ngModel>
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select>
+
+    <label for="status">Status:</label>
+    <select id="status" name="status" ngModel>
+      <option value="todo">To-Do</option>
+      <option value="inProgress">In Progress</option>
+      <option value="completed">Completed</option>
+    </select>
+
+    <input type="submit" value="{{editMode? 'update task' :'Add Task'}}"/>
+  </form>
